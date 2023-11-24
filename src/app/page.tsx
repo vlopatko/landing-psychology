@@ -2,6 +2,7 @@ import { cn } from '@/lib/utils'
 import Image from 'next/image'
 import { Inter } from 'next/font/google'
 import Slider from '@/components/Slider'
+import ContactForm from '@/components/ContactForm'
 
 const inter = Inter({ display: 'swap', subsets: ['latin'] })
 
@@ -46,11 +47,18 @@ export default function Home() {
       </div>
       <section>
         <Slider />
-        <p className="text-center italic">
+        <p className="mx-8 mt-16 border border-x-[1px] border-y-[1px] border-dashed border-[#342E24] text-center text-lg italic">
           Сприймайте звернення до психолога як крок до покращення загального
           самопочуття. Звернутися за допомогою це не слабкість, a мудрість та
           здорове ставлення до власного благополуччя i здоров'я.
         </p>
+      </section>
+      <section className="mb-12 mt-24">
+        <h3 className="mb-12 text-center text-5xl font-bold">
+          Якщо Ви відчуваєте що є чим поділитись, спробуйте консультацію зі
+          спеціалістом
+        </h3>
+        <ContactForm />
       </section>
     </>
   )

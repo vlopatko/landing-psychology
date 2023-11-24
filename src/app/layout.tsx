@@ -3,6 +3,7 @@ import './globals.css'
 import Header from '@/components/Header'
 import { cn } from '@/lib/utils'
 import localFont from 'next/font/local'
+import Footer from '@/components/Footer'
 
 const univermagFont = localFont({
   src: [
@@ -35,6 +36,7 @@ export default function RootLayout({
         <div className="mx-auto flex flex-col items-center bg-[#A9A494] md:max-w-4xl lg:max-w-7xl">
           {children}
         </div>
+        <Footer />
       </body>
     </html>
   )

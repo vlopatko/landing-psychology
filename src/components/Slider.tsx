@@ -29,23 +29,17 @@ const stories = [
 const Slider: FC = () => {
   const [activeIndex, setActiveIndex] = useState(0)
 
-  const handleArrowLeft = () => setActiveIndex((prevState) => prevState - 1)
-  const handleArrowRight = () => setActiveIndex((prevState) => prevState + 1)
+  const handleArrowLeft = () =>
+    setActiveIndex((prevState) =>
+      prevState > 0 ? prevState - 1 : stories.length - 1
+    )
+  const handleArrowRight = () =>
+    setActiveIndex((prevState) => (prevState <= 2 ? prevState + 1 : 0))
   const handlePagination = (index: number) => setActiveIndex(index)
 
   useEffect(() => {
-    if (activeIndex > stories.length - 1) {
-      setActiveIndex(0)
-    }
-
-    if (activeIndex < 0) {
-      setActiveIndex(stories.length - 1)
-    }
-  }, [activeIndex])
-
-  useEffect(() => {
     const interval = setInterval(
-      () => setActiveIndex((prevState) => prevState + 1),
+      () => setActiveIndex((prevState) => (prevState <= 2 ? prevState + 1 : 0)),
       5000
     )
 
@@ -70,9 +64,9 @@ const Slider: FC = () => {
             <div
               key={story.author}
               className={cn(
-                'h-0 w-0 opacity-0 transition-opacity duration-300',
+                'hidden opacity-0 transition-opacity duration-300',
                 {
-                  'h-full w-full opacity-100': activeIndex === index,
+                  'block h-full w-full opacity-100': activeIndex === index,
                 }
               )}
             >
