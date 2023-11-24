@@ -1,8 +1,17 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
 import './globals.css'
+import Header from '@/components/Header'
+import { cn } from '@/lib/utils'
+import localFont from 'next/font/local'
 
-const inter = Inter({ subsets: ['latin'] })
+const univermagFont = localFont({
+  src: [
+    {
+      path: '../../public/fonts/Univermag-Regular.otf',
+      weight: '400',
+    },
+  ],
+})
 
 export const metadata: Metadata = {
   title: 'Psychology Help',
@@ -16,7 +25,17 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body
+        className={cn(
+          'h-full w-full bg-main bg-cover bg-no-repeat text-[#342E24]',
+          univermagFont.className
+        )}
+      >
+        <Header />
+        <div className="mx-auto flex flex-col items-center bg-[#A9A494] md:max-w-4xl lg:max-w-7xl">
+          {children}
+        </div>
+      </body>
     </html>
   )
 }
