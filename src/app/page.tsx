@@ -1,8 +1,15 @@
 import { cn } from '@/lib/utils'
 import Image from 'next/image'
 import { Inter } from 'next/font/google'
-import Slider from '@/components/Slider'
 import ContactForm from '@/components/ContactForm'
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from '@/components/Accordion'
+import { tenRules } from '@/lib/ten-rules'
+import AccordionSection from '@/components/AccordionSection'
 
 const inter = Inter({ display: 'swap', subsets: ['latin'] })
 
@@ -46,15 +53,44 @@ export default function Home() {
         </div>
       </div>
       <section>
-        <Slider />
-        <p className="mx-8 mt-16 border border-x-[1px] border-y-[1px] border-dashed border-[#342E24] text-center text-lg italic">
+        {/* <Slider /> */}
+        <p className="mx-8 mb-8 border border-x-[1px] border-y-[1px] border-dashed border-[#342E24] text-center text-lg italic">
           Сприймайте звернення до психолога як крок до покращення загального
           самопочуття. Звернутися за допомогою це не слабкість, a мудрість та
           здорове ставлення до власного благополуччя i здоров'я.
         </p>
+        <p
+          className={cn(
+            inter.className,
+            'h-fit px-16 text-center text-lg italic'
+          )}
+        >
+          Пережиття втрати є одним з найбільш сумних і болісних випробувань на
+          дорозі життя. Ми не можемо обійти цих випробувань, як і не можемо
+          зробити біль втрати меншим - бо цей біль є виявом любові до тих, хто
+          дорогий нашому серцю і кого уже нема з нами. Втім ми потребуємо
+          підтримки рідних і близьких, щоб розділити цей біль, потребуємо
+          зв'язку з нашими ресурсами і цінностями - щоби віднайти сили далі
+          творити життя, бережучи в серці пам'ять про тих, кого любимо і хто
+          відійшов з цього світу...
+        </p>
+        <div className="mx-auto my-8 w-[840px] border-b border-[#342E24]" />
+        <p
+          className={cn(
+            inter.className,
+            'h-fit px-16 text-center text-lg italic'
+          )}
+        >
+          Через повномасштабне вторгнення з втратою рідних зіштовхнулися багато
+          українських родин. За словами психотерапевтів, загибель близької
+          людини — особиста трагедія і горе, яке потребує часу та внутрішніх
+          ресурсів.
+        </p>
+        <div className="mx-auto my-8 w-[840px] border-b border-[#342E24]" />
       </section>
-      <section className="mb-12 mt-24">
-        <h3 className="mb-12 text-center text-5xl font-bold">
+      <AccordionSection />
+      <section className="mb-12 flex flex-col gap-12">
+        <h3 className="text-center text-5xl font-bold">
           Якщо Ви відчуваєте що є чим поділитись, спробуйте консультацію зі
           спеціалістом
         </h3>

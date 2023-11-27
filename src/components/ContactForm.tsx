@@ -31,10 +31,11 @@ const ContactForm = () => {
     try {
       await axios.post('/api/sendEmail', formData)
       notify('Форма віправлена!')
-      setFormData({ name: '', email: '', message: '', phone: '' })
     } catch (error) {
       console.error('Помилка при відправці форми:', error)
       notify('Відбулась помилка. Будь ласка, спробуйте ще раз пізніше.')
+    } finally {
+      setFormData({ name: '', email: '', message: '', phone: '' })
     }
   }
 

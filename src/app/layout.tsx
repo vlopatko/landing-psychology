@@ -28,7 +28,7 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={cn(
-          'h-full w-full bg-main bg-cover bg-no-repeat text-[#342E24]',
+          'h-full w-full bg-main bg-contain bg-repeat-y text-[#342E24]',
           univermagFont.className
         )}
       >
@@ -36,7 +36,6 @@ export default function RootLayout({
         <div className="mx-auto flex flex-col items-center bg-[#A9A494] md:max-w-4xl lg:max-w-7xl">
           {children}
         </div>
-        <Footer />
       </body>
     </html>
   )
