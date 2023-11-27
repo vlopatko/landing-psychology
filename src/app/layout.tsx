@@ -3,7 +3,6 @@ import './globals.css'
 import Header from '@/components/Header'
 import { cn } from '@/lib/utils'
 import localFont from 'next/font/local'
-import Footer from '@/components/Footer'
 
 const univermagFont = localFont({
   src: [
